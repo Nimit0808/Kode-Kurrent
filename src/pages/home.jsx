@@ -166,11 +166,11 @@ export default function Home() {
             </a>
           </div>
           
-          <Link href="/creators">
+          <a href="/creators/index.html">
             <button className="mt-8 px-6 py-3 rounded-lg font-mono text-white font-medium tracking-widest bg-[#030712]/80 backdrop-blur-md border border-primary/50 hover:bg-primary/20 hover:shadow-[0_0_20px_rgba(128,144,184,0.4)] transition-all uppercase text-sm cursor-pointer">
               Created by
             </button>
-          </Link>
+          </a>
         </div>
         
         {/* Additional right-side content can go here if needed in the future */}

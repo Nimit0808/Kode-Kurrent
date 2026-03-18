@@ -8,7 +8,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import RegistrationSuccess from "@/pages/registration-success";
 import NotFound from "@/pages/not-found";
-import Creators from "@/pages/creators";
 import TargetCursor from "@/components/ui/TargetCursor";
 import SciFiBackground from "@/components/ui/SciFiBackground";
 import RocketSplash from "@/components/ui/RocketSplash";
@@ -34,7 +33,6 @@ function Router() {
       <Switch location={location}>
         <Route path="/" component={Home} />
         <Route path="/registration-success" component={RegistrationSuccess} />
-        <Route path="/creators" component={Creators} />
         <Route component={NotFound} />
       </Switch>
     </motion.div>
