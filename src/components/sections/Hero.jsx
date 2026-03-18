@@ -31,14 +31,13 @@ export function Hero() {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-  return <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+  return <header className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
     {/* Background Elements */}
     <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[100px]" />
     </div>
 
-    {/* Decorative Space Eye — removed per user request */}    {/* Bottom gradient fade into next section */}
-    <div className="absolute bottom-0 left-0 right-0 h-40 z-10 pointer-events-none bg-gradient-to-t from-[#060608] to-transparent" />
+    {/* Bottom gradient fade removed to prevent horizontal black stripes */}
 
     <div className="container mx-auto px-4 z-10 flex flex-col items-center justify-center">
       <motion.div initial={{
@@ -52,8 +51,8 @@ export function Hero() {
       }} className="text-center">
 
         {/* Unified Title without effect */}
-        <h1 className="text-center leading-tight mb-8 md:mb-12 text-[#8090B8] w-full px-4 break-words relative z-20 uppercase tracking-wide"
-            style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', fontFamily: 'Impact, "Bebas Neue", "Arial Black", sans-serif' }}>
+        <h1 className="text-center leading-normal md:leading-tight mb-8 md:mb-12 text-[#8090B8] w-full px-4 break-words relative z-20 uppercase tracking-wide"
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 8rem)', fontFamily: 'Impact, "Bebas Neue", "Arial Black", sans-serif' }}>
           KODEKURRENT 2.0
         </h1>
 
@@ -74,5 +73,5 @@ export function Hero() {
 
       </motion.div>
     </div>
-  </section>;
+  </header>;
 }

@@ -26,27 +26,33 @@ export function Sponsors() {
         </h2>
       </div>
 
-      <div className="w-full bg-[#060608]/80 border-y border-[#8090B8]/30 py-10 relative shadow-[0_0_30px_rgba(128,144,184,0.1)]">
-        <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[length:100%_2px,3px_100%] opacity-20" />
-        
-        <div className="relative flex w-full overflow-hidden">
-          <motion.div
-            className="flex gap-16 md:gap-24 whitespace-nowrap min-w-max px-8 items-center"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 30, ease: "linear", repeat: Infinity }}
-          >
-            {[...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
-              <div key={`${sponsor.name}-${index}`} className="flex flex-col items-center flex-shrink-0 group">
-                <div className="w-[150px] h-[80px] md:w-[250px] md:h-[120px] flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer transform hover:scale-110">
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="max-w-full max-h-full object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]"
-                  />
+      <div className="max-w-6xl mx-auto console-screen group">
+        <div className="console-header">
+           <span>SYSTEM: SPONSORS_MANIFEST</span>
+           <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div> AUTHORIZED</span>
+        </div>
+        <div className="console-content overflow-hidden relative py-10">
+          <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[length:100%_2px,3px_100%] opacity-20 z-0" />
+          
+          <div className="relative z-10 flex w-full overflow-hidden">
+            <motion.div
+              className="flex gap-16 md:gap-24 whitespace-nowrap min-w-max px-8 items-center"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+            >
+              {[...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
+                <div key={`${sponsor.name}-${index}`} className="flex flex-col items-center flex-shrink-0 group">
+                  <div className="w-[150px] h-[80px] md:w-[250px] md:h-[120px] flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer transform hover:scale-110">
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="max-w-full max-h-full object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

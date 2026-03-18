@@ -36,16 +36,35 @@ const SciFiBackground = () => {
     useEffect(() => {
         const observerOptions = {
             root: null,
-            rootMargin: '0px',
-            threshold: 0.3
+            rootMargin: '-10% 0px -10% 0px',
+            threshold: Array.from({length: 11}, (_, i) => i * 0.1) // [0, 0.1, 0.2 ... 1]
         };
+
+        const currentRatios = new Map();
 
         const handleIntersect = (entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setActiveSection(entry.target.id);
+                currentRatios.set(entry.target.id, entry.intersectionRatio);
+            });
+            
+            let maxRatio = 0;
+            let bestSection = null;
+            
+            // First pass: find the maximum ratio
+            currentRatios.forEach((ratio, id) => {
+                if (ratio > maxRatio) {
+                    maxRatio = ratio;
+                    bestSection = id;
                 }
             });
+            
+            // Only update if a highly visible section is found and it's changed
+            if (bestSection && maxRatio >= 0.2) {
+                setActiveSection(bestSection);
+            } else if (maxRatio < 0.2) {
+                // Failsafe: if nothing is clearly visible, default to home
+                setActiveSection('home');
+            }
         };
 
         const observer = new IntersectionObserver(handleIntersect, observerOptions);
@@ -98,7 +117,9 @@ const SciFiBackground = () => {
                         style={{
                             backgroundImage: sectionImages[activeSection] ? `url("${sectionImages[activeSection]}")` : 'none',
                             backgroundPositionX: bgX,
-                            backgroundSize: '150% auto',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat',
                             zIndex: 1,
                             filter: 'brightness(0.6) contrast(1.1) saturate(0.8)'
                         }}

@@ -38,7 +38,7 @@ export function Timeline() {
     restDelta: 0.001
   });
 
-  return <section id="timeline" ref={containerRef} className="py-20 relative bg-black/40">
+  return <section id="timeline" ref={containerRef} className="py-20 relative">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl md:text-5xl font-pixel text-center mb-16 text-white uppercase translate-z-0">
         TIME <span className="text-primary">LINE</span>

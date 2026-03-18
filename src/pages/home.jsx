@@ -9,7 +9,9 @@ import { Sponsors } from "@/components/sections/Sponsors";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
 import { motion } from "framer-motion";
-import { Gamepad2, Rocket, Cpu } from "lucide-react";
+import { Gamepad2, Rocket, Cpu, MapPin } from "lucide-react";
+import { Link } from "wouter";
+
 export default function Home() {
   return <div className="min-h-screen text-foreground overflow-x-hidden selection:bg-primary selection:text-white">
     <Navbar />
@@ -133,22 +135,51 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10 sci-fi-panel max-w-2xl py-8">
-        <div className="flex flex-col items-center justify-center gap-4">
-          <h2 className="text-3xl font-pixel text-primary tracking-widest">
-            IEEE SB RGIPT
-          </h2>
-          <div className="flex gap-6 mt-4">
-
-
-            <a href="https://www.instagram.com/ieee_rgipt/" target="_blank" rel="noopener noreferrer" className="font-mono text-sm hover:text-primary transition-colors">Instagram</a>
-            <a href="#" className="font-mono text-sm hover:text-primary transition-colors">LinkedIn</a>
-            <a href="#" className="font-mono text-sm hover:text-primary transition-colors">Twitter</a>
+      <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row justify-between items-end gap-10">
+        <div className="flex flex-col items-start gap-4">
+          <a href="https://www.ieeergipt.in/" target="_blank" rel="noopener noreferrer" className="group block">
+            <h2 className="text-5xl md:text-6xl font-pixel text-white tracking-widest font-bold group-hover:text-primary transition-colors">
+              IEEE
+            </h2>
+            <div className="flex flex-col gap-2 mt-2">
+              <p className="font-mono text-xl md:text-2xl text-foreground max-w-sm group-hover:text-primary/80 transition-colors">
+                Student Branch
+              </p>
+              <p className="font-mono text-sm md:text-base text-muted-foreground max-w-md">
+                Rajiv Gandhi Institute of Petroleum Technology
+              </p>
+            </div>
+          </a>
+          
+          <div className="flex gap-4 mt-6">
+            {/* LinkedIn */}
+            <a href="https://www.linkedin.com/company/ieeergipt/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="p-3 bg-[#030712]/80 backdrop-blur-md border border-primary/30 rounded-xl hover:border-primary/80 hover:shadow-[0_0_15px_rgba(128,144,184,0.3)] transition-all text-muted-foreground hover:text-white flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            {/* Instagram */}
+            <a href="https://www.instagram.com/ieee_rgipt/" target="_blank" rel="noopener noreferrer" className="p-3 bg-[#030712]/80 backdrop-blur-md border border-primary/30 rounded-xl hover:border-primary/80 hover:shadow-[0_0_15px_rgba(128,144,184,0.3)] transition-all text-muted-foreground hover:text-white flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            {/* Location */}
+            <a href="https://www.google.com/maps/place/Rajiv+Gandhi+Institute+of+Petroleum+Technology+(RGIPT)/@26.2733824,81.5104,7146m/data=!3m1!1e3!4m6!3m5!1s0x399ba1580bf13c33:0x32df0c8e914ab52e!8m2!3d26.2649711!4d81.5066796!16s%2Fm%2F03d7rbq?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="p-3 bg-[#030712]/80 backdrop-blur-md border border-primary/30 rounded-xl hover:border-primary/80 hover:shadow-[0_0_15px_rgba(128,144,184,0.3)] transition-all text-muted-foreground hover:text-white flex items-center justify-center">
+              <MapPin size={24} strokeWidth={2} />
+            </a>
           </div>
-          <p className="font-pixel text-[10px] mt-8 text-white/30">
-            © 2026 KodeKurrent. Powered by Innovation.
-          </p>
+          
+          <Link href="/creators">
+            <button className="mt-8 px-6 py-3 rounded-lg font-mono text-white font-medium tracking-widest bg-[#030712]/80 backdrop-blur-md border border-primary/50 hover:bg-primary/20 hover:shadow-[0_0_20px_rgba(128,144,184,0.4)] transition-all uppercase text-sm cursor-pointer">
+              Created by
+            </button>
+          </Link>
         </div>
+        
+        {/* Additional right-side content can go here if needed in the future */}
+      </div>
+
+      <div className="container mx-auto px-4 mt-20 relative z-10 text-center">
+        <p className="font-pixel text-sm md:text-base text-muted-foreground/50 tracking-widest">
+          © 2026 KodeKurrent. Powered by Innovation.
+        </p>
       </div>
     </footer>
   </div>;

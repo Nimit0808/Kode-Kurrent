@@ -7,7 +7,7 @@ import { InteractiveGlobe } from "@/components/InteractiveGlobe.jsx";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 bg-black/40">
+    <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
 
         {/* Title */}
@@ -75,27 +75,7 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Contact Info */}
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex items-center gap-2 sci-fi-panel px-4 py-2 rounded-lg text-primary">
-                <Mail className="w-4 h-4 text-primary" />
-                <span className="text-sm font-mono">
-                  ieee_sb@rgipt.ac.in
-                </span>
-              </div>
 
-              <a
-                href="https://www.google.com/maps/place/Rajiv+Gandhi+Institute+of+Petroleum+Technology+(RGIPT)/@26.2649711,81.5041047,837m/data=!3m2!1e3!4b1!4m6!3m5!1s0x399ba1580bf13c33:0x32df0c8e914ab52e!8m2!3d26.2649711!4d81.5066796!16s%2Fm%2F03d7rbq?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 sci-fi-panel px-4 py-2 rounded-lg hover:bg-white/10 transition-colors cursor-pointer text-primary"
-              >
-                <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm font-mono">
-                  RGIPT, Jais
-                </span>
-              </a>
-            </div>
 
           </motion.div>
 

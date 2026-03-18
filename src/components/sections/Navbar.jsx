@@ -41,7 +41,9 @@ export function Navbar() {
     <div className="flex justify-between items-center rounded-full border border-primary/50 bg-[#060608]/80 backdrop-blur-md px-4 md:px-8 py-3 shadow-[0_0_15px_rgba(128,144,184,0.3)]">
       <div className="flex items-center">
         {/* Img 1 Replacement: IEEE Logo */}
-        <img src={ieeeLogo} alt="IEEE SB RGIPT" className="h-8 md:h-10 w-auto object-contain" />
+        <a href="https://www.ieeergipt.in/" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform duration-300">
+          <img src={ieeeLogo} alt="IEEE SB RGIPT" className="h-8 md:h-10 w-auto object-contain" />
+        </a>
       </div>
 
       {/* Desktop Nav */}

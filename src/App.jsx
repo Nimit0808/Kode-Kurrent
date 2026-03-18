@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import RegistrationSuccess from "@/pages/registration-success";
 import NotFound from "@/pages/not-found";
+import Creators from "@/pages/creators";
 import TargetCursor from "@/components/ui/TargetCursor";
 import SciFiBackground from "@/components/ui/SciFiBackground";
 import RocketSplash from "@/components/ui/RocketSplash";
@@ -17,7 +18,7 @@ import { useLocation } from "wouter";
 function Router() {
   const [location] = useLocation();
   return <AnimatePresence mode="wait">
-    <motion.div key={location} initial={{
+    <motion.div key={location} className="min-h-screen w-full flex flex-col" initial={{
       opacity: 0,
       scale: 0.98
     }} animate={{
@@ -33,6 +34,7 @@ function Router() {
       <Switch location={location}>
         <Route path="/" component={Home} />
         <Route path="/registration-success" component={RegistrationSuccess} />
+        <Route path="/creators" component={Creators} />
         <Route component={NotFound} />
       </Switch>
     </motion.div>
